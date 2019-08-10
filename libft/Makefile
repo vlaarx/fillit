@@ -49,6 +49,7 @@ $(NAME): 	$(OBJS)
 			@ranlib $(NAME)
 
 $(OBJS): 	$(OBJDIR)%.o: $(SRCDIR)%.c
+			@mkdir -p $(OBJDIR)
 			@$(CC) $(FLAGS) -I $(HEADER) -c $< -o $@ 
 
 clean:

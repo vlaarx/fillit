@@ -6,7 +6,7 @@
 #    By: screight <screight@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/01 13:51:23 by screight          #+#    #+#              #
-#    Updated: 2019/05/02 22:21:05 by screight         ###   ########.fr        #
+#    Updated: 2019/08/10 16:11:23 by screight         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,6 +41,7 @@ $(NAME): 	$(OBJS) | mklib
 			@$(CC) $(FLAG) $(OBJS) -I $(LIBHDR) -I $(HEADER) -L $(LIBDIR) -lft -o $(NAME)
 
 $(OBJS): 	$(OBJDIR)%.o: $(SRCDIR)%.c
+			@mkdir -p $(OBJDIR)
 			@$(CC) $(FLAGS) -I $(LIBHDR) -I $(HEADER) -c $< -o $@
 mklib: 
 			@make -C $(LIBDIR) --no-print-directory
